@@ -1,0 +1,67 @@
+<!--
+GioJSCalc was created by Giovani Vasconcelos in September 29th, 2017
+-->
+<html>
+<head><script>
+
+function PrintValue(botao) {
+	var botao = botao.value;
+	var saida = frmcalc.txtout.value;
+	var resultado;
+	if (botao == '=') {
+		resultado = eval(saida);
+		frmcalc.txtout.value = resultado;
+	}
+	else if (botao == 'clear') {
+		frmcalc.txtout.value = '';
+	}
+	else {	
+		frmcalc.txtout.value += botao;
+	}
+	return true;
+}
+</script></head>
+<body>
+
+<form name="frmcalc" id="frmcalc">
+<table border=0>
+<tr><td colspan=4 align=center>JavaScript Calculator</td></tr>
+<tr><td colspan=4>&nbsp;</td></tr>
+<tr><td colspan=4><input type=text size=20 id=txtout name=txtout></td></tr>
+<tr><td colspan=4>&nbsp;</td></tr>
+<tr>
+<td align=center><input type=button value="1" id="btn1" name="btn1" OnClick="PrintValue(this);"></td>
+<td align=center><input type=button value="2" id="btn2" name="btn2" OnClick="PrintValue(this);"></td>
+<td align=center><input type=button value="3" id="btn3" name="btn3" OnClick="PrintValue(this);"></td>
+<td align=center><input type=button value="+" id="btn+" name="btn+" OnClick="PrintValue(this);"></td>
+</tr>
+<tr>
+<td align=center><input type=button value="4" id="btn4" name="btn4" OnClick="PrintValue(this);"></td>
+<td align=center><input type=button value="5" id="btn5" name="btn5" OnClick="PrintValue(this);"></td>
+<td align=center><input type=button value="6" id="btn6" name="btn6" OnClick="PrintValue(this);"></td>
+<td align=center><input type=button value="-" id="btn-" name="btn-" OnClick="PrintValue(this);"></td>
+</tr>
+<tr>
+<td align=center><input type=button value="7" id="btn7" name="btn7" OnClick="PrintValue(this);"></td>
+<td align=center><input type=button value="8" id="btn8" name="btn8" OnClick="PrintValue(this);"></td>
+<td align=center><input type=button value="9" id="btn9" name="btn9" OnClick="PrintValue(this);"></td>
+<td align=center><input type=button value="*" id="btnx" name="btnx" OnClick="PrintValue(this);"></td>
+</tr>
+<tr>
+<td align=center>&nbsp;</td>
+<td align=center><input type=button value="0" id="btn0" name="btn0" OnClick="PrintValue(this);"></td>
+<td align=center>&nbsp;</td>
+<td align=center><input type=button value="/" id="btndiv" name="btndiv" OnClick="PrintValue(this);"></td>
+</tr>
+<tr>
+<td colspan=3 align=center>&nbsp;</td>
+<td align=center><input type=button value="=" id="btncalc" name="btncalc" OnClick="PrintValue(this);"></td>
+</tr>
+<tr>
+<td colspan=3 align=center>&nbsp;</td>
+<td align=center><input type=button value="clear" id="btnclear" name="btnclear" OnClick="PrintValue(this);"></td>
+</tr>
+</table>
+</form>
+</body>
+</html>
